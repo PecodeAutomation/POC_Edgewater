@@ -1,0 +1,34 @@
+{
+  "name": "poc_edgewater",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pw:headless": "npx playwright test",
+    "pw:headed:mobile": "npx playwright test --headed --project=mobileSafari",
+    "pw:headless:mobile": "npx playwright test --project=mobileSafari",
+    "pw:headed:chromium": "npx playwright test --headed --project=chromium",
+    "pw:headless:chromium": "npx playwright test --project=chromium",
+    "pw:headed": "npx playwright test --headed",
+    "pw:debug": "npx playwright test --debug",
+    "pw:ui": "npx playwright test --ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PecodeAutomation/POC_Edgewater.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PecodeAutomation/POC_Edgewater/issues"
+  },
+  "homepage": "https://github.com/PecodeAutomation/POC_Edgewater#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.33.0"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.6.1",
+    "dotenv": "^16.0.3"
+  }
+}

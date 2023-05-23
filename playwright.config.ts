@@ -35,7 +35,7 @@ const config: PlaywrightTestConfig = {
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: `https://www.edgewatermarkets.com/`,
+    baseURL: `https://www.saucedemo.com/`,
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 30 * 1000,
     /* Maximum time navigation method such as `goto()` can take. Defaults to 0 (no limit). */

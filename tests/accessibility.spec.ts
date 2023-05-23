@@ -1,13 +1,12 @@
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "@fixtures/baseFixture";
+import { standartUserCredentials } from "../src/modules/data/credentials"
 
 test.describe("Verify accessibility", () => {
-  test("Verify that that landing page have not automatically detectable critical accessibility issues", async ({
+  test("Verify that that login page have not automatically detectable critical accessibility issues", async ({
     page,
-    navigationBar,
   }) => {
     await page.goto("/");
-    await navigationBar.acceptCookies();
     const accessibilityScan = await new AxeBuilder({ page }).analyze();
     const accessibilityScanResults = accessibilityScan.violations.filter(
       (violation) => violation.impact === "critical"
@@ -15,16 +14,12 @@ test.describe("Verify accessibility", () => {
     expect(accessibilityScanResults).toEqual([]);
   });
 
-  test("Verify that that Markets page have not automatically detectable critical accessibility issues", async ({
+  test("Verify that that Products page have not automatically detectable critical accessibility issues", async ({
     page,
-    navigationBar,
-  }, testInfo) => {
+    loginPage
+  }) => {
     await page.goto("/");
-    await navigationBar.acceptCookies();
-    if (testInfo.project.name === "mobileSafari") {
-      await navigationBar.openMenuByToggleButton();
-    }
-    await navigationBar.openMarketsPage();
+    await loginPage.login(standartUserCredentials);
     const accessibilityScan = await new AxeBuilder({ page }).analyze();
     const accessibilityScanResults = accessibilityScan.violations.filter(
       (violation) => violation.impact === "critical"

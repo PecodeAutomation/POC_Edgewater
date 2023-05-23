@@ -1,16 +1,21 @@
 import { test as baseTest } from "@playwright/test";
-import { NavigationBarComponent } from "../pages/NavigationBarComponent";
-import { ContactFormComponent } from "../pages/ContactFormComponent";
+import { ProductsPage } from "../pages/ProductsPage";
+import { LoginPage } from "../pages/LoginPage";
+import { CartPage } from "../pages/CartPage";
 
 const test = baseTest.extend<{
-  navigationBar: NavigationBarComponent;
-  contactForm: ContactFormComponent;
+  productsPage: ProductsPage;
+  loginPage: LoginPage;
+  cartPage: CartPage;
 }>({
-  navigationBar: async ({ page }, use) => {
-    await use(new NavigationBarComponent(page));
+  cartPage: async ({ page }, use) => {
+    await use(new CartPage(page));
   },
-  contactForm: async ({ page }, use) => {
-    await use(new ContactFormComponent(page));
+  productsPage: async ({ page }, use) => {
+    await use(new ProductsPage(page));
+  },
+  loginPage: async ({ page }, use) => {
+    await use(new LoginPage(page));
   },
 });
 

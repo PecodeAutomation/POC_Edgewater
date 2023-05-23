@@ -1,10 +1,10 @@
-name: Playwright Tests
+name: Playwright Tests Demo
 
 on:
   push:
-    branches: [main]
+    branches: [demo]
   pull_request:
-    branches: [main]
+    branches: [demo]
 
 jobs:
   playwright-test:

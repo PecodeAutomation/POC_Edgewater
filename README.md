@@ -1,4 +1,4 @@
-# POC_Edgewater
+# POC_Example
 
 Automated e2e tests
 

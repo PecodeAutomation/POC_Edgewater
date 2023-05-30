@@ -3,7 +3,7 @@ import { test, expect } from "@fixtures/baseFixture";
 
 test.describe.configure({ mode: "parallel"});
 
-test.describe.only("Verify accessibility", () => {
+test.describe("Verify accessibility", () => {
   test("Verify that that login page have not automatically detectable critical accessibility issues", async ({
     page,
   }) => {

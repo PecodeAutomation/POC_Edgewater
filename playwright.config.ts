@@ -23,7 +23,7 @@ const config: PlaywrightTestConfig = {
     timeout: 5000,
   },
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -35,7 +35,7 @@ const config: PlaywrightTestConfig = {
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: `https://www.saucedemo.com/`,
+    baseURL: `https://uat.latamfx.pro/`,
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 30 * 1000,
     /* Maximum time navigation method such as `goto()` can take. Defaults to 0 (no limit). */
@@ -72,14 +72,14 @@ const config: PlaywrightTestConfig = {
     //   name: 'Mobile Chrome',
     //   use: { ...devices['Pixel 5'] },
     // },
-    {
-      name: "mobileSafari",
-      use: {
-        ...devices["iPhone 12"],
-        screenshot: "only-on-failure",
-        video: "retain-on-failure",
-      },
-    },
+    // {
+    //   name: "mobileSafari",
+    //   use: {
+    //     ...devices["iPhone 12"],
+    //     screenshot: "only-on-failure",
+    //     video: "retain-on-failure",
+    //   },
+    // },
 
     /* Test against branded browsers. */
     // {

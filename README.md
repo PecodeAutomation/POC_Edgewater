@@ -1,4 +1,4 @@
-# POC_Example
+# POC_Edgewater
 
 Automated e2e tests
 
@@ -14,7 +14,7 @@ Automated e2e tests
 # Directory structure
 
 - **_tests_** - contains e2e test files 
-- **_pages_** - contains the page selectors and uses them to create methods such as create something new, edit something, delete something etc.
+- **_components_** - contains the page selectors and uses them to create methods such as create something new, edit something, delete something etc.
 - **_fixtures_** - allows to put reusable behavior such as custom commands or global overrides to extended test function that you want applied and available to all of your tests
 - _**playwright.config.ts**_ - This file is used to store any configuration values you supply.
 

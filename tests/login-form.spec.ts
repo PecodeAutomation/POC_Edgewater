@@ -1,16 +1,18 @@
-import { test, expect } from "@fixtures/baseFixture";
+import { test, expect } from "@fixtures/notLoginedFixture";
 import { standartUserCredentials, invalidCredentials } from "../src/modules/data/credentials"
+
+test.describe.configure({ mode: "parallel"});
 
 test.describe("Login form tests", () => {
   test("Verify that user can login with valid credentials", async ({
-    page,
+    headerComponent,
     loginPage,
-    productsPage
+    page
   }) => {   
     await page.goto("/");
     await loginPage.login(standartUserCredentials);
 
-    await expect(productsPage.productsPageTitle).toBeVisible();
+    await expect(headerComponent.settingsButton).toBeVisible();
   });
 
   test("Verify that user can not login with invalid credentials", async ({
@@ -21,18 +23,7 @@ test.describe("Login form tests", () => {
     await loginPage.login(invalidCredentials);
 
     await expect(loginPage.errorAlert).toHaveText(
-      "Epic sadface: Username and password do not match any user in this service"
+      "Usuario o contraseña incorrecto"
     );
-  });
-
-  test("Verify that user can not login without credentials", async ({
-    page,
-    loginPage
-  }) => {
-    await page.goto("/");
-    await loginPage.submitLogin();
-
-    await expect(loginPage.userNameInputField).toHaveClass(/error/);
-    await expect(loginPage.passwordInputField).toHaveClass(/error/);
   });
 });

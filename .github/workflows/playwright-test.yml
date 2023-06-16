@@ -1,17 +1,17 @@
-name: Playwright Tests Demo
+name: Playwright Tests Demo Edgewater
 
 on:
   push:
-    branches: [demo]
+    branches: [edgewater]
   pull_request:
-    branches: [demo]
+    branches: [edgewater]
 
 jobs:
   playwright-test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.33.0-jammy
+      image: mcr.microsoft.com/playwright:v1.35.1-jammy
     steps:
       # Checkout and setup
       - uses: actions/checkout@v3

@@ -7,4 +7,8 @@ export class HeaderComponent extends BasePage {
   constructor(readonly page: Page) {
     super(page);
   }
+
+  async openSettings(): Promise<void> {
+    await this.settingsButton.click();
+  }
 }
